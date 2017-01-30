@@ -38,12 +38,13 @@ when a user interaction causes one of your radio buttons to update `groupValue`.
 </label>
 ```
 
-You can additionally provide `disabled` `name` and `required` properties to a `radio-button`
+You can additionally provide `disabled` `name` `context` and `required` properties to a `radio-button`. When a context is passed in, the action specified in the `change` property will receive the value passed in to `context`. This is especially useful when creating radio buttons in an each statement.
 
 ```javascript
 {{radio-button
     value="green"
     groupValue=color
+    context=someContext
     required=true
     disabled=true
     name="color"}}
@@ -60,6 +61,7 @@ The `radioId` and `radioClass` properties allow specifying the id and adding cla
     radioId="purple-radio"
     radioClass="my-custom-class"
     value="purple"
+    context=someObject
     groupValue=color
     changed="colorChanged"}}
     Purple
